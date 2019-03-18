@@ -1,15 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ToDoApp from './components/ToDoApp';
 
-class TodoApp extends React.Component {
-    render() {
-        return (
-            <div>
-                Hello
-            </div>
-        )        
-    }
-}
 
-const appRoot = document.getElementById('app');
-ReactDOM.render(<TodoApp />, appRoot);
+
+ReactDOM.render(<ToDoApp />, document.getElementById('app'));

@@ -16,6 +16,7 @@
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
+    "jslint": "^0.12.1",
     "react": "16.8.4",
     "react-dom": "16.8.4",
     "webpack": "4.29.6",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "babel-eslint": "9.0.0",
     "eslint": "5.15.2",
+    "eslint-plugin-react": "^7.12.4",
     "webpack-cli": "3.3.0"
   }
 }
