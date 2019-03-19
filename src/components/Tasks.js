@@ -9,10 +9,10 @@ export default class Tasks extends React.Component{
             <div>
                 <p>Your Tasks's:</p>
                 {
-                    this.props.tasks.map((task) => (
+                    this.props.tasks && this.props.tasks.map((task) => (
                         <Task 
-                            key={task.tid}
-                            id={task.tid}
+                            key={task.id}
+                            id={task.id}
                             name={task.name}
                             subtasks={task.subtasks}
                         />
