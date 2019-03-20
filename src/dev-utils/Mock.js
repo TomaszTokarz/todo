@@ -1,7 +1,7 @@
 
 class Mock {
 
-    getMockedData = () => {                
+    getMockedData = () => {
         return {
             user: {
                 id: 1,

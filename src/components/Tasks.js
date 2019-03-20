@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Task from './Task';
 
 export default class Tasks extends React.Component{
@@ -18,7 +17,6 @@ export default class Tasks extends React.Component{
                         />
                     ))
                 }
-                <p>----- END OF TASKS LIST -----</p>
             </div>
         )
     }

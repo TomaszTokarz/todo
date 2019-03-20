@@ -19,7 +19,7 @@ export default class ToDoApp extends React.Component {
                     userAvatar={this.state.user.avatar} 
                     userName={this.state.user.name} 
                 />
-                <Tasks 
+                <Tasks
                     tasks={this.state.tasks}
                 />
             </div>
