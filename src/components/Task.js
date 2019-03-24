@@ -6,14 +6,25 @@ import {CheckboxUnchecked} from 'styled-icons/icomoon/CheckboxUnchecked';
 import {TrashAlt} from 'styled-icons/fa-solid/TrashAlt';
 import Button from './Button';
 
-export default class Task extends React.Component{  
+export default class Task extends React.Component{
+
+    toggleDone(task) {
+    }
+
+    submit(event) {
+        event.preventDefault();
+        console.log(event.target.elements)
+    }
+
     render() {
         return (
-            <Wrapper>
-                <TaskContainer>
-                    {
-                        this.props.done ? <Checked /> : <Unchecked /> 
-                    }
+            <Wrapper onSubmit={this.submit}>
+                <TaskContainer>                                         
+                    <Button onClick={() => this.toggleDone(this.props)}>
+                        {
+                            this.props.done ? <Checked /> : <Unchecked />
+                        }                        
+                    </Button>
 
                     <TaskItem>
                         <span>{this.props.name}</span>                    
@@ -25,14 +36,17 @@ export default class Task extends React.Component{
                         subtasks={this.props.subtasks}
                     />               
                 }
-                <p>{this.props.description}</p>
+                {
+                    this.props.description ? <p>{this.props.description}</p> : ''
+                }
+                
             </Wrapper>
                 
         )
     }
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.form`
     display: flex;
     flex-direction: column;
     color: #F6FFFF;
