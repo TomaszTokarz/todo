@@ -9,25 +9,37 @@ import Button from './Button';
 export default class Task extends React.Component{  
     render() {
         return (
-            <TaskContainer>
+            <Wrapper>
+                <TaskContainer>
                 {
                     this.props.done ? <Checked /> : <Unchecked /> 
                 }
 
                 <TaskItem>
-                    <span>Task ({this.props.id}): {this.props.name}</span>
-                    {
-                        // <Subtasks 
-                        //     subtasks={this.props.subtasks}
-                        // />               
-                    }
+                    <span>{this.props.name}</span>                    
                     <Button><Delete /></Button>
                 </TaskItem>
-            </TaskContainer>
+                
+                </TaskContainer>
+                {
+                    <Subtasks 
+                        subtasks={this.props.subtasks}
+                    />               
+                }            
+            </Wrapper>
                 
         )
     }
 }
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    color: #F6FFFF;
+    line-height: 40px;
+    border-bottom: 2px solid #F6FFFF;
+    padding: 0 10px;
+`;
 
 const TaskContainer = styled.div`
     display: flex;

@@ -23,9 +23,8 @@ export default class Tasks extends React.Component{
     }
 }
 
-
 const TasksList = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 10px 0;
 `;

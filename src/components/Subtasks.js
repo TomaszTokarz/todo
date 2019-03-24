@@ -1,11 +1,12 @@
 import React from 'react';
 import Subtask from './Subtask';
+import styled from 'styled-components';
 
 export default class Subtasks extends React.Component{
 
     render() {
         return (
-            <div>
+            <SubasksList>
                 {
                     this.props.subtasks && this.props.subtasks.map((subtask) => (
                         <Subtask 
@@ -15,8 +16,13 @@ export default class Subtasks extends React.Component{
                         />
                     ))
                 }
-                <p>----- END OF SUBTASKS LIST -----</p>
-            </div>
+            </SubasksList>
         )
     }
 }
+
+const SubasksList = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+`;
