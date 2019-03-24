@@ -1,12 +1,12 @@
 import React from 'react';
 import Task from './Task';
+import styled from 'styled-components';
 
 export default class Tasks extends React.Component{
 
     render() {
         return (
-            <div>
-                <p>Your Tasks's:</p>
+            <TasksList>
                 {
                     this.props.tasks && this.props.tasks.map((task) => (
                         <Task 
@@ -14,10 +14,18 @@ export default class Tasks extends React.Component{
                             id={task.id}
                             name={task.name}
                             subtasks={task.subtasks}
+                            done={task.done}
                         />
                     ))
                 }
-            </div>
+            </TasksList>
         )
     }
 }
+
+
+const TasksList = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+`;

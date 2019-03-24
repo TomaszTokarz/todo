@@ -34,7 +34,7 @@ class Mock {
             }, {
                 id: 2,
                 name: 'Do some simple stuff',
-                done: false,
+                done: true,
                 removed: false,
                 subtasks: [],
                 description: '',

@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from "styled-components";
 
 import Header from './Header';
 import Tasks from './Tasks';
@@ -14,7 +15,7 @@ export default class ToDoApp extends React.Component {
 
     render() {
         return (
-            <div>
+            <Wrapper>
                 <Header 
                     userAvatar={this.state.user.avatar} 
                     userName={this.state.user.name} 
@@ -22,7 +23,16 @@ export default class ToDoApp extends React.Component {
                 <Tasks
                     tasks={this.state.tasks}
                 />
-            </div>
+            </Wrapper>
         )        
     }
 }
+
+const Wrapper = styled.div`
+    margin: 0;
+    font-family: 'Margarine', cursive;
+    display: flex;
+    flex-direction: column;    
+    background: #226666;
+    height: 100vh;
+`;

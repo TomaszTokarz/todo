@@ -16,9 +16,10 @@
     "babel-plugin-transform-class-properties": "6.24.1",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
-    "jslint": "^0.12.1",
     "react": "16.8.4",
     "react-dom": "16.8.4",
+    "styled-components": "^4.2.0",
+    "styled-icons": "^7.6.0",
     "webpack": "4.29.6",
     "webpack-dev-server": "3.2.1"
   },
