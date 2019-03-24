@@ -29,7 +29,7 @@ class Mock {
                     done: false,
                     removed: true
                 }],
-                description: 'Do something or even more "somethings" ;)',
+                description: 'Do something or even more "somethings"',
                 data: '18.03.2019'
             }, {
                 id: 2,

@@ -15,6 +15,7 @@ export default class Tasks extends React.Component{
                             name={task.name}
                             subtasks={task.subtasks}
                             done={task.done}
+                            description={task.description}
                         />
                     ))
                 }

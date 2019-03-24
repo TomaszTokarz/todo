@@ -11,21 +11,21 @@ export default class Task extends React.Component{
         return (
             <Wrapper>
                 <TaskContainer>
-                {
-                    this.props.done ? <Checked /> : <Unchecked /> 
-                }
+                    {
+                        this.props.done ? <Checked /> : <Unchecked /> 
+                    }
 
-                <TaskItem>
-                    <span>{this.props.name}</span>                    
-                    <Button><Delete /></Button>
-                </TaskItem>
-                
+                    <TaskItem>
+                        <span>{this.props.name}</span>                    
+                        <Button><Delete /></Button>
+                    </TaskItem>                
                 </TaskContainer>
                 {
                     <Subtasks 
                         subtasks={this.props.subtasks}
                     />               
-                }            
+                }
+                <p>{this.props.description}</p>
             </Wrapper>
                 
         )

@@ -7,7 +7,7 @@ import Button from './Button';
 
 export default class Subtask extends React.Component{
 
-    render() {
+    render() {        
         return (
             <Wrapper>
                 {
