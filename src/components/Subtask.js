@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import {CheckboxChecked} from 'styled-icons/icomoon/CheckboxChecked';
-import {CheckboxUnchecked} from 'styled-icons/icomoon/CheckboxUnchecked';
-import {TrashAlt} from 'styled-icons/fa-solid/TrashAlt';
+import { CheckboxChecked } from 'styled-icons/icomoon/CheckboxChecked';
+import { CheckboxUnchecked } from 'styled-icons/icomoon/CheckboxUnchecked';
+import { TrashAlt } from 'styled-icons/fa-solid/TrashAlt';
 import Button from './Button';
 
 export default class Subtask extends React.Component{
-
-    render() {        
+    render() {      
+        
+        const { done, name } = this.props;
+        
         return (
             <Wrapper>
                 {
-                    this.props.done ? <Checked /> : <Unchecked /> 
+                    done ? <Checked /> : <Unchecked /> 
                 }
                 <SubtaskItem>
-                    <span>{this.props.name}</span>
+                    <span>{name}</span>
                     <Button><Delete /></Button>
                 </SubtaskItem>                
             </Wrapper>            

@@ -3,12 +3,13 @@ import Task from './Task';
 import styled from 'styled-components';
 
 export default class Tasks extends React.Component{
-
     render() {
+        const { tasks, toggleDone } = this.props;
+
         return (
             <TasksList>
                 {
-                    this.props.tasks && this.props.tasks.map((task) => (
+                    tasks && tasks.map((task) => (
                         <Task 
                             key={task.id}
                             id={task.id}
@@ -16,6 +17,7 @@ export default class Tasks extends React.Component{
                             subtasks={task.subtasks}
                             done={task.done}
                             description={task.description}
+                            toggleDone={toggleDone}
                         />
                     ))
                 }

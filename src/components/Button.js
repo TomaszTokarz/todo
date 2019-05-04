@@ -4,9 +4,8 @@ import styled from 'styled-components';
 export default class Button extends React.Component{
 
     render() {
-        return (
-            <MainButton onClick={this.props.onClick}>{this.props.children}</MainButton>
-        )
+        return <MainButton {...this.props} />
+        // <MainButton onClick={this.props.onClick}>{this.props.children}</MainButton>
     }
 }
 

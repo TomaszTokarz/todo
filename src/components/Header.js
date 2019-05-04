@@ -7,13 +7,15 @@ import {UserCircle} from 'styled-icons/fa-solid/UserCircle';
 
 export default class Header extends React.Component{
     render() {
+
+        const { userName } = this.props;
+
         return (
             <Wrapper>
                 <UserContainer>
                     <Avatar />
-                    <div>{this.props.userName}</div>
+                    <div>{userName}</div>
                 </UserContainer>
-                
                 <ButtonsContainer>
                     <Button><AddButton /></Button>
                     <Button><MenuButton /></Button>

@@ -8,26 +8,26 @@ import Button from './Button';
 
 export default class Task extends React.Component{
 
-    toggleDone(task) {
+    constructor(props) {
+        super(props);
+        this.handleToggleDone = this.handleToggleDone.bind(this);
     }
 
-    submit(event) {
-        event.preventDefault();
-        console.log(event.target.elements)
+    handleToggleDone = () => {
     }
 
     render() {
         return (
-            <Wrapper onSubmit={this.submit}>
+            <Wrapper>
                 <TaskContainer>                                         
-                    <Button onClick={() => this.toggleDone(this.props)}>
+                    <Button onClick={this.handleToggleDone}>
                         {
                             this.props.done ? <Checked /> : <Unchecked />
                         }                        
                     </Button>
 
                     <TaskItem>
-                        <span>{this.props.name}</span>                    
+                        <span>{this.props.name}`</span>                    
                         <Button><Delete /></Button>
                     </TaskItem>                
                 </TaskContainer>
@@ -36,17 +36,13 @@ export default class Task extends React.Component{
                         subtasks={this.props.subtasks}
                     />               
                 }
-                {
-                    this.props.description ? <p>{this.props.description}</p> : ''
-                }
-                
-            </Wrapper>
-                
+                {this.props.description && <p>{this.props.description}</p>}                
+            </Wrapper>       
         )
     }
 }
 
-const Wrapper = styled.form`
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     color: #F6FFFF;

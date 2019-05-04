@@ -5,6 +5,7 @@ import Header from './Header';
 import Tasks from './Tasks';
 import Mock from './../dev-utils/Mock';
 
+// Temporary data
 const userData = new Mock;
 
 export default class ToDoApp extends React.Component {
