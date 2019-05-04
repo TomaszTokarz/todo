@@ -1,46 +1,42 @@
 import React from 'react';
 import Subtasks from './Subtasks';
 import styled from 'styled-components';
-import {CheckboxChecked} from 'styled-icons/icomoon/CheckboxChecked';
-import {CheckboxUnchecked} from 'styled-icons/icomoon/CheckboxUnchecked';
-import {TrashAlt} from 'styled-icons/fa-solid/TrashAlt';
+import { CheckboxChecked } from 'styled-icons/icomoon/CheckboxChecked';
+import { CheckboxUnchecked } from 'styled-icons/icomoon/CheckboxUnchecked';
+import { TrashAlt } from 'styled-icons/fa-solid/TrashAlt';
 import Button from './Button';
 
 export default class Task extends React.Component{
-
-    constructor(props) {
-        super(props);
-        this.handleToggleDone = this.handleToggleDone.bind(this);
-    }
-
-    handleToggleDone = () => {
-    }
-
     render() {
+
+        const { done, name, subtasks, description } = this.props;
+
         return (
             <Wrapper>
                 <TaskContainer>                                         
-                    <Button onClick={this.handleToggleDone}>
+                    <Button>
                         {
-                            this.props.done ? <Checked /> : <Unchecked />
+                            done ? <Checked /> : <Unchecked />
                         }                        
                     </Button>
 
                     <TaskItem>
-                        <span>{this.props.name}`</span>                    
+                        <span> {name} </span>                    
                         <Button><Delete /></Button>
                     </TaskItem>                
                 </TaskContainer>
                 {
                     <Subtasks 
-                        subtasks={this.props.subtasks}
+                        subtasks = {subtasks}
                     />               
                 }
-                {this.props.description && <p>{this.props.description}</p>}                
+                {
+                    {description} && <p>{description}</p>
+                }                
             </Wrapper>       
         )
     }
-}
+};
 
 const Wrapper = styled.div`
     display: flex;

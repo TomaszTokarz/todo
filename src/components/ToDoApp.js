@@ -1,30 +1,23 @@
 import React from 'react';
 import styled from "styled-components";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
+import rootReducer from './../reducers/rootReducer';
 import Header from './Header';
 import Tasks from './Tasks';
-import Mock from './../dev-utils/Mock';
 
-// Temporary data
-const userData = new Mock;
+const store = createStore(rootReducer);
 
 export default class ToDoApp extends React.Component {
-    state = {
-        user: userData.getMockedData().user,
-        tasks: userData.getMockedData().tasks
-    };
-
     render() {
         return (
-            <Wrapper>
-                <Header 
-                    userAvatar={this.state.user.avatar} 
-                    userName={this.state.user.name} 
-                />
-                <Tasks
-                    tasks={this.state.tasks}
-                />
-            </Wrapper>
+            <Provider store={store}>
+                <Wrapper>
+                    <Header />
+                    <Tasks  />
+                </Wrapper>
+            </Provider>            
         )        
     }
 }

@@ -1,20 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Button from './Button';
-import {AddCircle} from 'styled-icons/material/AddCircle';
-import {Menu} from 'styled-icons/boxicons-regular/Menu';
-import {UserCircle} from 'styled-icons/fa-solid/UserCircle';
 
-export default class Header extends React.Component{
+import { AddCircle } from 'styled-icons/material/AddCircle';
+import { Menu } from 'styled-icons/boxicons-regular/Menu';
+import { UserCircle } from 'styled-icons/fa-solid/UserCircle';
+
+const mapState = (state) => ({
+    avatar: state.user.avatar,
+    name: state.user.name
+});
+
+class Header extends React.Component{
     render() {
 
-        const { userName } = this.props;
+        const { name } = this.props;
 
         return (
             <Wrapper>
                 <UserContainer>
                     <Avatar />
-                    <div>{userName}</div>
+                    <div>{name}</div>
                 </UserContainer>
                 <ButtonsContainer>
                     <Button><AddButton /></Button>
@@ -24,6 +31,8 @@ export default class Header extends React.Component{
         )
     }
 }
+
+export default connect(mapState)(Header);
 
 const Wrapper = styled.div`
     height: 40px;

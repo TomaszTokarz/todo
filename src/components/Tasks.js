@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Task from './Task';
 import styled from 'styled-components';
 
-export default class Tasks extends React.Component{
+const mapState = (state) => ({
+    tasks: state.tasks,
+    toggleDone: state.toggleDone
+});
+
+class Tasks extends React.Component{
     render() {
+
         const { tasks, toggleDone } = this.props;
 
         return (
@@ -24,7 +31,9 @@ export default class Tasks extends React.Component{
             </TasksList>
         )
     }
-}
+};
+
+export default connect(mapState)(Tasks);
 
 const TasksList = styled.div`
     display: flex;
