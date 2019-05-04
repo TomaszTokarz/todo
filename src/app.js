@@ -3,26 +3,6 @@ import ReactDOM from 'react-dom';
 
 import ToDoApp from './components/ToDoApp';
 
-// REDUX
-
-// const demoState = {
-//     expenses: [{
-//         id: 'pies',
-//         description: 'dupa dupa',
-//         note: 'nanaananapies',
-//         amount: 104392,
-//         createdAt: 0
-//     }],
-//     filters: {
-//         text: 'rent',
-//         sortBy: 'date',
-//         startDate: undefined,
-//         endDate: undefined
-//     }
-// };
-
-// Expenses reducer
-
 // const expensesReducerDefaultState = [];
 
 // const expensesReducer = (state = expensesReducerDefaultState, action) => {

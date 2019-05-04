@@ -5,7 +5,13 @@ const initialState = {
 };
 
 const userReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case 'USER_NAME_EDIT':
+            return {...state, name: action.newName};
+
+        default: 
+            return state;
+    }
 };
 
 export default userReducer;
