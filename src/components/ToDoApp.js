@@ -1,20 +1,43 @@
 import React from 'react';
 import styled from "styled-components";
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import rootReducer from './../reducers/rootReducer';
+import configureStore from '../store/configureStore';
 import Header from './Header';
 import Tasks from './Tasks';
+import NewTask from './NewTask';
 
-const store = createStore(rootReducer);
+const store = configureStore();
+
+store.subscribe(() => {
+    console.log(store.getState());
+});
 
 export default class ToDoApp extends React.Component {
+
+    state = {
+        addNewTask: false
+    };
+
+    showNewTaskForm = () => {
+        this.setState(() => ({ addNewTask: true }));
+    };
+
+    hideNewTaskForm = () => {
+        this.setState(() => ({ addNewTask: false }));
+    };
+
     render() {
+
+        const { addNewTask } = this.state;
+
         return (
             <Provider store={store}>
                 <Wrapper>
-                    <Header />
+                    <Header showNewTaskForm={this.showNewTaskForm} />
+                    {
+                        addNewTask && <NewTask hideNewTaskForm={this.hideNewTaskForm} />
+                    }                    
                     <Tasks  />
                 </Wrapper>
             </Provider>            

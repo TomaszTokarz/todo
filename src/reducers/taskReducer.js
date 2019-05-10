@@ -20,7 +20,7 @@ const initialState = [{
         removed: true
     }],
     description: 'Do something or even more "somethings"',
-    data: '18.03.2019'
+    date: '18.03.2019'
 }, {
     id: 2,
     name: 'Do some simple stuff',
@@ -28,11 +28,27 @@ const initialState = [{
     removed: false,
     subtasks: [],
     description: '',
-    data: '18.03.2019'
+    date: '18.03.2019'
 }]
 
-const taskReducer = (state = initialState, action) => {
-    return state;
-};
+export default (state = initialState, action) => {
+    switch (action.type) {
+        case 'TASK_ADD':
+            return [...state, action.task];
 
-export default taskReducer;
+        case 'TASK_EDIT':
+            console.log(action.type);
+            return state;
+
+        case 'TASK_DELETE':
+            console.log(action.type);
+            return state;
+
+        case 'TASK_CLOSE':
+            console.log(action.type);
+            return state;
+
+        default: 
+            return state;
+    };
+};

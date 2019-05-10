@@ -7,24 +7,15 @@ import { AddCircle } from 'styled-icons/material/AddCircle';
 import { Menu } from 'styled-icons/boxicons-regular/Menu';
 import { UserCircle } from 'styled-icons/fa-solid/UserCircle';
 
-const changeName = ({ newName = 'different user name'} = {}) => ({
-    type: 'USER_NAME_EDIT',
-    newName
-});
-
 const mapState = (state) => ({
     avatar: state.user.avatar,
     name: state.user.name
 });
 
-const actions = {
-    changeName
-};
-
 class Header extends React.Component{
     render() {
 
-        const { name, changeName } = this.props;
+        const { name, showNewTaskForm } = this.props;
 
         return (
             <Wrapper>
@@ -33,7 +24,9 @@ class Header extends React.Component{
                     <div>{name}</div>
                 </UserContainer>
                 <ButtonsContainer>
-                    <Button onClick={changeName}><AddButton /></Button>
+                    <Button onClick={showNewTaskForm}>
+                        <AddButton />
+                    </Button>
                     <Button><MenuButton /></Button>
                 </ButtonsContainer>                
             </Wrapper>
@@ -41,7 +34,7 @@ class Header extends React.Component{
     }
 }
 
-export default connect(mapState, actions)(Header);
+export default connect(mapState)(Header);
 
 const Wrapper = styled.div`
     height: 40px;
